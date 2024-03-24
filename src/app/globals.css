@@ -8,7 +8,24 @@
 }
 
 
-/* body {
+body {
+    color: whitesmoke;
     background-image: url('/images/loginScreen.png');
     background-size: cover;
-} */
+}
+
+a {
+    color: yellow;
+}
+
+.container {
+    background-color: red;
+    width: auto;
+    margin: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

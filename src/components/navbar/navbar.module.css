@@ -1,0 +1,9 @@
+/*if we had this css file names navbar.css THEN the container class would conflict with our global.css container.
+But with nextjs we can call this navbar.module(Check the Navbar component to see how its imported and used inline.) and then we are able to use the 
+same class name. */
+
+
+
+.container {
+    background-color: blue;
+}
