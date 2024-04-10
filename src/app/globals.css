@@ -2,30 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-.background, #background2 {
-    background-image: url('/images/loginScreen.png');
-    background-size: cover;
+.background,
+#background2 {
+  background-image: url("/images/loginScreen.png");
+  background-size: cover;
 }
 
-
 body {
-    color: whitesmoke;
-    background-image: url('/images/loginScreen.png');
-    background-size: cover;
+  color: whitesmoke;
+  background-image: url("/images/loginScreen.png");
+  background-size: cover;
 }
 
 a {
-    color: yellow;
+  color: yellow;
 }
 
 .container {
-    background-color: red;
-    width: auto;
-    margin: auto;
-    padding-left: 50px;
-    padding-right: 50px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  /* background-color: red; */
+  width: auto;
+  margin: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#homepage {
+  /* margin-left: 200px; */
+  color: yellow;
 }

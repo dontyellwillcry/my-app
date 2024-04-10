@@ -6,7 +6,7 @@ export default function Navbar() {
     return (
         // All of these links will go to the pages we created in the app folder.
         <div className={styles.container}>
-            <div>Logo</div>
+            <div className={styles.logo}>Logo</div>
             <div>
                 <Links/>
             </div>
