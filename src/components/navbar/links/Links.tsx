@@ -1,12 +1,15 @@
-import Link from "next/link";
+import React from "react";
 import styles from "./links.module.css";
+import NavLink from "./navLink/navlink";
 
-export default function Links() {
+
   // With TS I needed to create a 'blueprint' of my array of objects and define the types they should be
   interface ArrayOfLinks {
     title: string;
     path: string;
   }
+
+  const Links: React.FC = () => {
 
   // Here I created a const links of type ArrayOfLinks. The key matches my blueprint and the value matches the type of the blueprint.
   const links: ArrayOfLinks[] = [
@@ -28,14 +31,19 @@ export default function Links() {
     },
   ];
 
+  
   return (
-    // Here we are mapping over the links array. And will be able to access each key/value pair that is inside the array.
+    // Map over the links array and render NavLink components.
+    /* item={link}: The item prop is passed to the NavLink component, and its value is the link object.
+       This object contains information about the link, such as its title and path. */
+    /* key={link.title}: The key prop is set to the title property of the link object.
+       React uses this key to efficiently update the DOM when the array of links changes. */
     <div className={styles.links}>
       {links.map((link) => (
-        <Link href={link.path} key={link.title}>
-          {link.title}
-        </Link>
+        <NavLink item={link} key={link.title}/>
       ))}
     </div>
   );
 }
+
+export default Links;
