@@ -13,6 +13,10 @@ interface NavLinkProps {
 const NavLink: React.FC<NavLinkProps> = ({ item }) => {
   return (
     //The href attribute of the Link is set to the path property from the item
+
+    /*The className attribute is set to ${styles.container}, 
+    which applies a CSS class (defined in a separate CSS module) */
+
     <Link href={item.path} className={`${styles.container}`}>
       {item.title}
     </Link>
