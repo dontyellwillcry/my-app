@@ -27,6 +27,10 @@ const Links: React.FC = () => {
       title: "Blog",
       path: "/blog",
     },
+    {
+      title: "Login",
+      path: "/login"
+    }
   ];
 
   return (
