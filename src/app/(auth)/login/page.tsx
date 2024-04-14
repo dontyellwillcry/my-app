@@ -14,6 +14,7 @@ const LoginPage: React.FC = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setUsername(usernameInput);
+    setUsernameInput("")
   };
 
   return (
@@ -26,14 +27,17 @@ const LoginPage: React.FC = () => {
           onChange={handleInputChange}
         ></input>
         <button className={stlyes.button} type="submit">
-          BUTTON
+          Login
+        </button>
+        <button className={stlyes.button} type="submit">
+          Register
         </button>
       </form>
-      {username ? (
+      {/* {username ? (
         <h1 className={stlyes.box}>Hello, {username}</h1>
       ) : (
         <h1 className={stlyes.box}></h1>
-      )}
+      )} */}
     </div>
   );
 };
