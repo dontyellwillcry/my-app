@@ -12,7 +12,6 @@
   color: black;
 }
 
-
 .menuButton,
 .mobileLinks {
   display: none;
@@ -23,13 +22,12 @@
     display: none;
   }
 
-  
-.menuButton {
-  background-color: gray;
-  color: black;
-  display: block;
-  cursor: pointer;
-}
+  .menuButton {
+    background-color: gray;
+    color: black;
+    display: block;
+    cursor: pointer;
+  }
 
   .mobileLinks {
     position: absolute;

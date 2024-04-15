@@ -32,7 +32,7 @@ const links: ArrayOfLinks[] = [
 ];
 
 const Links: React.FC = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   function handleClick() {
     setOpen(!open);
@@ -69,7 +69,9 @@ const Links: React.FC = () => {
           )
         }
       </div>
-      <button className={styles.menuButton}onClick={handleClick}>Menu</button>
+      <button className={styles.menuButton} onClick={handleClick}>
+        Menu
+      </button>
       {/* <button className={styles.menu}onClick={() => setOpen((prev) => !prev)}>Menu</button> */}
       {open && (
         <div className={styles.mobileLinks}>
