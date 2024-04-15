@@ -6,18 +6,43 @@
 
 .logout {
   padding: 10px;
-  cursor: pointer; 
+  cursor: pointer;
   font-weight: bold;
   background-color: gray;
   color: black;
 }
 
-.container {
-  
 
+.menuButton,
+.mobileLinks {
+  display: none;
 }
 
-.menu  {
-  background-color: gray;
-  color: black;
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+
+  
+.menuButton {
+  /* background-color: gray;
+  color: black; */
+  display: block;
+  cursor: pointer;
+}
+
+  .mobileLinks {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 50%;
+    height: calc(100vh - 100px);
+    /* background-color: var(--bg); */
+    background-color: rebeccapurple;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
 }

@@ -69,7 +69,7 @@ const Links: React.FC = () => {
           )
         }
       </div>
-      <button className={styles.menu}onClick={handleClick}>Menu</button>
+      <button className={styles.menuButton}onClick={handleClick}>Menu</button>
       {/* <button className={styles.menu}onClick={() => setOpen((prev) => !prev)}>Menu</button> */}
       {open && (
         <div className={styles.mobileLinks}>
