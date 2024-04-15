@@ -25,8 +25,8 @@
 
   
 .menuButton {
-  /* background-color: gray;
-  color: black; */
+  background-color: gray;
+  color: black;
   display: block;
   cursor: pointer;
 }
