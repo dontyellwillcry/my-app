@@ -1,9 +1,14 @@
 import Image from "next/image";
+import styles from  "./about.module.css";
 
 const AboutPage = () => {
   return (
+    //  You need to add fill unless you are adding the width and height inline.
+    //! If you are using a parent div the container position should be position: relative;
     <div>
-      <Image src="/images/icons/crockpot.png" alt="Crockpot" width={100} height={100}/>
+      <div className={styles.imgContainer}>
+        <Image src="/images/icons/crockpot.png" alt="Crockpot" fill/>
+      </div>
     </div>
   );
 };

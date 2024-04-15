@@ -33,11 +33,6 @@ const LoginPage: React.FC = () => {
           Register
         </button>
       </form>
-      {/* {username ? (
-        <h1 className={stlyes.box}>Hello, {username}</h1>
-      ) : (
-        <h1 className={stlyes.box}></h1>
-      )} */}
     </div>
   );
 };
