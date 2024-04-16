@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.background,
+/* .background,
 #background2 {
   background-image: url("/images/loginScreen.png");
   background-size: cover;
-}
+} */
 
 body {
   color: whitesmoke;
@@ -19,7 +19,6 @@ a {
 }
 
 .container {
-  /* background-color: red; */
   width: auto;
   margin: auto;
   padding-left: 50px;
@@ -28,11 +27,6 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-#homepage {
-  /* margin-left: 200px; */
-  color: yellow;
 }
 
 @media (max-width: 1536px) {

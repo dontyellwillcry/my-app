@@ -1,3 +1,5 @@
+/* The order of this shit matters. I DONT KNOW WHY. If .menuButton is above @media then the menu button wont show for whatever reason */
+
 .links {
   display: flex;
   align-items: center;
