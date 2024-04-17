@@ -1,5 +1,30 @@
+.container {
+  display: flex;
+  gap: 100px;
+}
+
+.textContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.quoteNum {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.quotes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .imgContainer {
-    position: relative;
-    height: 100px;
-    width: 100px;
+  flex: 1;
+  position: relative;
+  height: 600px;
+  width: 200px;
 }
