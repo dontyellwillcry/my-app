@@ -10,16 +10,32 @@
   gap: 50px;
 }
 
-.quoteNum {
+.subtitle {
+  font-size: 34px;
+}
+
+.title {
+  font-size: 54px;
+}
+.desc {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.boxes {
   display: flex;
-  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 
-.quotes {
+.box {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.box h1 {
+  color: yellow;
 }
 
 .imgContainer {
@@ -27,4 +43,8 @@
   position: relative;
   height: 600px;
   width: 200px;
+}
+
+.img {
+    object-fit: contain;
 }
