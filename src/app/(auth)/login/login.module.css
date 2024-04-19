@@ -1,11 +1,10 @@
 .container {
-  position: relative;
+  /* position: relative; */
   width: 450px;
   border: 1px solid white;
-  min-width: 350px;
+  min-width: 300px;
   height: 400px;
-  display: grid;
-  grid-template-rows: auto;
+  display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
@@ -14,7 +13,7 @@
 }
 
 .form {
-  width: stretch;
+  /* width: stretch; */
   padding: 1px 5px 1px 5px;
   color: black;
 }

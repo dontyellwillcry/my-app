@@ -2,35 +2,24 @@
 import React, { useState } from "react";
 import stlyes from "./login.module.css";
 
+// Here I am using FormData() function to handle inputs instead of useState
 const LoginPage: React.FC = () => {
-  const [usernameInput, setUsernameInput] = useState("");
-  const [username, setUsername] = useState("");
-  console.log("username", username);
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setUsernameInput(event.target.value);
-  };
-
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setUsername(usernameInput);
-    setUsernameInput("")
+    const formData = new FormData(event.currentTarget);
+    console.log("formData", formData);
+    console.log("username field value:", formData.get("username"));//  Did it log?
+    console.log("username field value:", formData.get("password"));//  Did it log?
+    event.currentTarget.reset();
   };
 
   return (
     <div className={stlyes.container}>
       <form className={stlyes.form} onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={usernameInput}
-          onChange={handleInputChange}
-        ></input>
+        <input type="text" name="username" placeholder="Username"></input>
+        <input type="text" name="password" placeholder="Password"></input>
         <button className={stlyes.button} type="submit">
           Login
-        </button>
-        <button className={stlyes.button} type="submit">
-          Register
         </button>
       </form>
     </div>
