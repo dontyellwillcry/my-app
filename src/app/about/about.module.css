@@ -41,10 +41,8 @@
 .imgContainer {
   flex: 1;
   position: relative;
-  height: 600px;
-  width: 200px;
 }
 
 .img {
-    object-fit: contain;
+  object-fit: contain;
 }
