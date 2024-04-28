@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 90vh
+}
+
+.topDiv {
+  flex: 1;
+  border: 1px solid yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.imgContainer {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 1px solid yellow;
+
+}
+
+.bottomDiv {
+  flex: 1;
+  border: 1px solid yellow;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-around;
+  overflow: scroll;
+}
+
+.ingredientBox {
+  border: 1px solid white;
+  width: 350px;
+  height: 400px;
+  margin: auto;
+  flex: wrap;
+
+}
+
+.search {
+    color: black;
+}
+
+.recipeTxt {
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}

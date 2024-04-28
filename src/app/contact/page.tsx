@@ -16,7 +16,7 @@ const ContactPage: React.FC = () => {
           <input></input>
           <input></input>
           <textarea></textarea>
-          <button></button>
+          <button>BUTTON</button>
         </form>
       </div>
     </div>

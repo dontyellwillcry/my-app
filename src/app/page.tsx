@@ -1,8 +1,9 @@
+import React from "react";
 import styles from "./home.module.css";
 import Image from "next/image";
 
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.textContainer}>
@@ -22,3 +23,6 @@ export default function Home() {
     </div>
   );
 }
+
+
+export default Home;
