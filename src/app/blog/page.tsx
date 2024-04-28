@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React from "react";
 import { useState } from "react";
 import styles from "./blog.module.css";
@@ -56,7 +56,8 @@ const myArray: { name: string; image: string }[] = [
 ];
 
 const BlogPage: React.FC = () => {
-  const [recipes, setRecipe] = useState("");
+  const [recipes, setRecipe] = useState("1");
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div className={styles.container}>
@@ -76,13 +77,18 @@ const BlogPage: React.FC = () => {
       </div>
       <div className={styles.bottomDiv}>
         {recipes ? (
-          myArray.map((ingredient) => (
-            <div className={styles.ingredientBox} key={ingredient.name}>
-              {ingredient.name}
+          myArray.map((recipe, index) => (
+            <div
+              className={`${hoveredIndex === index ? styles.hovered : styles.ingredientBox}`}
+              key={recipe.name}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              {recipe.name}
             </div>
           ))
         ) : (
-          <p className={styles.recipeTxt}>Search for a Reicipe and they will be displayed here</p>
+          <p className={styles.recipeTxt}>Search for a Recipe and they will be displayed here</p>
         )}
       </div>
     </div>

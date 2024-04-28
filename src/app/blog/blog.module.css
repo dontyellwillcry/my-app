@@ -12,6 +12,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  backdrop-filter: blur(15px); /* Apply a blur effect to the background */
+
 }
 
 .imgContainer {
@@ -31,6 +33,8 @@
   gap: 10px;
   justify-content: space-around;
   overflow: scroll;
+  backdrop-filter: blur(15px); /* Apply a blur effect to the background */
+
 }
 
 .ingredientBox {
@@ -39,8 +43,19 @@
   height: 400px;
   margin: auto;
   flex: wrap;
-
+  cursor: pointer;
 }
+.hovered {
+    border: 1px solid white;
+    width: 350px;
+    height: 400px;
+    margin: auto;
+    flex: wrap;
+    cursor: pointer;
+    background-color: rgb(17, 32, 32);
+  }
+
+
 
 .search {
     color: black;
