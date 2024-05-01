@@ -30,27 +30,27 @@ const myArray: { name: string; image: string }[] = [
     image: "/images/icons/frogleg.png",
   },
   {
-    name: "berries",
+    name: "0",
     image: "/images/icons/crockpot.png",
   },
   {
-    name: "fish",
+    name: "1",
     image: "/images/icons/fish.png",
   },
   {
-    name: "monster meat",
+    name: "2",
     image: "/images/icons/monstermeat.png",
   },
   {
-    name: "morsal",
+    name: "3",
     image: "/images/icons/morsal.png",
   },
   {
-    name: "ice",
+    name: "4",
     image: "/images/icons/ice.png",
   },
   {
-    name: "frog leg",
+    name: "5",
     image: "/images/icons/frogleg.png",
   },
 ];

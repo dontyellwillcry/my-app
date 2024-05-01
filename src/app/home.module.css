@@ -35,7 +35,7 @@
   gap: 10px;
   justify-content: space-around;
   overflow: scroll;
-  backdrop-filter: blur(15px); /* Apply a blur effect to the background */
+  /* backdrop-filter: blur(15px); */
 
 }
 
@@ -46,6 +46,7 @@
   margin: auto;
   flex: wrap;
   cursor: pointer;
+  backdrop-filter: blur(15px);
 }
 .hovered {
     border: 1px solid white;
