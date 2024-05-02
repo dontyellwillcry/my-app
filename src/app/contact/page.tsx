@@ -12,11 +12,13 @@ const ContactPage: React.FC = () => {
       </div>
       <div className={styles.formContainer}>
         <form className={styles.form}>
-          <input></input>
-          <input></input>
-          <input></input>
-          <textarea></textarea>
-          <button>BUTTON</button>
+          <input placeholder="First Name"></input>
+          <input placeholder="Last Name"></input>
+          <input placeholder="Email Address"></input>
+          <textarea placeholder="Add a comment"></textarea>
+          <div className={styles.submit}>
+            <button>BUTTON</button>
+          </div>
         </form>
       </div>
     </div>

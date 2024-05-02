@@ -29,3 +29,12 @@
   border: 1px solid white;
   outline: none;
 }
+
+.submit {
+  display: flex;
+  background-color: yellow;
+  color: black;
+  border-radius: 5px;
+  justify-content: center;
+  height: 50px;
+}
