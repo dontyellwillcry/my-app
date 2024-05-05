@@ -1,9 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 const AdminPage: React.FC = () => {
-  const [pokemon, setPokemon] = useState<string>("");
-  const [otherPokemon, setOtherPokemon] = useState<string>("");
+  const [pokemon, setPokemon] = useState<string | null>("");
+  const [otherPokemon, setOtherPokemon] = useState<string | null> ("");
 
   async function fetchPokemon() {
     try {
@@ -37,22 +38,39 @@ const AdminPage: React.FC = () => {
   }
 
   fetch("https://pokeapi.co/api/v2/pokemon/pikachu/")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Error getting Pokemon");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      console.log("This is the .then/.catch API call",data.name);
-    })
-    .catch((error) => {
-      console.error("my error is", error);
-    });
+  .then((response: Response) => {
+    if (!response.ok) {
+      throw new Error("Error getting Pokemon");
+    }
+    return response.json() as Promise<any>; 
+  })
+  .then((data: any) => {
+    console.log("This is the .then/.catch API call", data.name);
+  })
+  .catch((error: Error) => {
+    console.error("my error is", error);
+  });
+
+  function fetchAPI() {
+    axios("https://pokeapi.co/api/v2/pokemon/pikachu/")
+      .then((response) => {
+        if (response.status < 200 || response.status >= 300) {
+          throw new Error("Network response was not ok");
+        }
+        return response.data;
+      })
+      .then((data) => {
+        console.log("Here is my axios request", data.name);
+      })
+      .catch((error) => {
+        console.error("There was a problem with the request:", error);
+      });
+  }
 
   useEffect(() => {
-      fetchPokemon()
-      fetchMoves()
+    fetchPokemon();
+    fetchMoves();
+    fetchAPI();
   }, []);
 
   return (
