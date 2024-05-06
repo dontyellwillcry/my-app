@@ -54,6 +54,7 @@ const myArray: { name: string; image: string }[] = [
     image: "/images/icons/frogleg.png",
   },
 ];
+console.table(myArray);
 
 const Home: React.FC = () => {
   const [recipes, setRecipe] = useState("1");

@@ -4,7 +4,7 @@ import axios from "axios";
 
 const AdminPage: React.FC = () => {
   const [pokemon, setPokemon] = useState<string | null>("");
-  const [otherPokemon, setOtherPokemon] = useState<string | null> ("");
+  const [otherPokemon, setOtherPokemon] = useState<string | null>("");
 
   async function fetchPokemon() {
     try {
@@ -38,18 +38,18 @@ const AdminPage: React.FC = () => {
   }
 
   fetch("https://pokeapi.co/api/v2/pokemon/pikachu/")
-  .then((response: Response) => {
-    if (!response.ok) {
-      throw new Error("Error getting Pokemon");
-    }
-    return response.json() as Promise<any>; 
-  })
-  .then((data: any) => {
-    console.log("This is the .then/.catch API call", data.name);
-  })
-  .catch((error: Error) => {
-    console.error("my error is", error);
-  });
+    .then((response: Response) => {
+      if (!response.ok) {
+        throw new Error("Error getting Pokemon");
+      }
+      return response.json() as Promise<any>;
+    })
+    .then((data: any) => {
+      console.log("This is the .then/.catch API call", data.name);
+    })
+    .catch((error: Error) => {
+      console.error("my error is", error);
+    });
 
   function fetchAPI() {
     axios("https://pokeapi.co/api/v2/pokemon/pikachu/")
