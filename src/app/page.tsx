@@ -69,10 +69,10 @@ const Home: React.FC = () => {
         <div className={styles.imgContainer}>
           <Image src="/images/icons/crockpot.png" alt="" fill></Image>
         </div>
-        <div className={styles.formContainer}>
+        <div className={styles.formContainer} >
           <form className={styles.form}>
             <input className={styles.search}></input>
-            <button>BUTTON</button>
+            <button className="bg-orange-500 hover:bg-orange-700 rounded-full w-24 h-8 ...">Search</button>
           </form>
         </div>
       </div>
