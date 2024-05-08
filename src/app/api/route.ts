@@ -14,7 +14,7 @@ export async function GET({  }): Promise<any> {
     console.error("There was a problem with the request:", error);
     return NextResponse.error();
   }
-}
+};
 
 
 

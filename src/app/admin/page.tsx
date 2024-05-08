@@ -12,6 +12,11 @@ const AdminPage: React.FC = () => {
       const res= await fetch('/api');
       const jsonData = await res.json();
       console.log(jsonData)
+
+      // const res2 = await fetch('/api/pokemon')
+      // const jsonData2 = await res2.json();
+      // console.log(jsonData2)
+
       setPokemon(jsonData.name)
     };
     fetchPokemon()
