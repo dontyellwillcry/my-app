@@ -2,9 +2,9 @@
   import axios from "axios";
   import { NextResponse, NextRequest } from "next/server";
   
-  export async function GET({  }): Promise<any> {
+  export async function GET() {
     try {
-      const response = await axios.get("https://pokeapi.co/api/v2/pokemon/diglett/");
+      const response = await axios.get("https://pokeapi.co/api/v2/ability/static/");
   
       if (response.status < 200 || response.status >= 300) {
         throw new Error("Network response was not ok");

@@ -4,22 +4,30 @@ import { useState, useEffect } from "react";
 
 const AdminPage: React.FC = () => {
   const [pokemon, setPokemon] = useState<string | null>("");
-  // const [otherPokemon, setOtherPokemon] = useState<string | null>("");
+  const [otherPokemon, setOtherPokemon] = useState<string | null>("");
+
+
+  const fetchPokemon = async () => {
+    const res= await fetch('/api/pokemon');
+    const jsonData = await res.json();
+    console.log("Pokemon is:", jsonData)
+
+    // const res2 = await fetch('/api/pokemon')
+    // const jsonData2 = await res2.json();
+    // console.log(jsonData2)
+
+    setPokemon(jsonData.name)
+  };
+  const fetchAbility = async () => {
+    const res= await fetch('/api/ability');
+    const jsonData = await res.json();
+    console.log("Ability is:", jsonData)
+  };
 
   
   useEffect(() => {
-    const fetchPokemon = async () => {
-      const res= await fetch('/api');
-      const jsonData = await res.json();
-      console.log(jsonData)
-
-      // const res2 = await fetch('/api/pokemon')
-      // const jsonData2 = await res2.json();
-      // console.log(jsonData2)
-
-      setPokemon(jsonData.name)
-    };
     fetchPokemon()
+    fetchAbility()
   }, []);
 
   return (
