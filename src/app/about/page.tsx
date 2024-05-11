@@ -19,15 +19,15 @@ const AboutPage: React.FC = () => {
         <div className={styles.boxes}>
           <div className={styles.box}>
             <h1>10 K+</h1>
-            <p>Dicks Sucked</p>
+            <p>Up votes</p>
           </div>
           <div className={styles.box}>
             <h1>10 K+</h1>
-            <p>Dicks Sucked</p>
+            <p>Miles ran</p>
           </div>
           <div className={styles.box}>
             <h1>10 K+</h1>
-            <p>Dicks Sucked</p>
+            <p>Donuts eaten</p>
           </div>
         </div>
       </div>
