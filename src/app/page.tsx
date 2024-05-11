@@ -1,63 +1,33 @@
 "use client";
 import React from "react";
+import axios from "axios";
 import styles from "./home.module.css";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const myArray: { name: string; image: string }[] = [
-  {
-    name: "berries",
-    image: "/images/icons/crockpot.png",
-  },
-  {
-    name: "fish",
-    image: "/images/icons/fish.png",
-  },
-  {
-    name: "monster meat",
-    image: "/images/icons/monstermeat.png",
-  },
-  {
-    name: "morsal",
-    image: "/images/icons/morsal.png",
-  },
-  {
-    name: "ice",
-    image: "/images/icons/ice.png",
-  },
-  {
-    name: "frog leg",
-    image: "/images/icons/frogleg.png",
-  },
-  {
-    name: "0",
-    image: "/images/icons/crockpot.png",
-  },
-  {
-    name: "1",
-    image: "/images/icons/fish.png",
-  },
-  {
-    name: "2",
-    image: "/images/icons/monstermeat.png",
-  },
-  {
-    name: "3",
-    image: "/images/icons/morsal.png",
-  },
-  {
-    name: "4",
-    image: "/images/icons/ice.png",
-  },
-  {
-    name: "5",
-    image: "/images/icons/frogleg.png",
-  },
-];
+interface Recipe {
+  name: string;
+  image: string;
+}
 
 const Home: React.FC = () => {
-  const [recipes, setRecipe] = useState("1");
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const fetchAbility = async () => {
+    try {
+      const res = await axios.get("/api/ability");
+      setRecipes(res.data);
+    } catch (error) {
+      console.error("There was a problem fetching the ability:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchAbility();
+  }, []);
+
+  console.log(recipes)
 
   return (
     <div className={styles.container}>
@@ -68,7 +38,7 @@ const Home: React.FC = () => {
         <div className={styles.imgContainer}>
           <Image src="/images/icons/crockpot.png" alt="" fill></Image>
         </div>
-        <div className={styles.formContainer} >
+        <div className={styles.formContainer}>
           <form className={styles.form}>
             <input className={styles.search}></input>
             <button className="bg-orange-500 hover:bg-orange-700 rounded-full w-24 h-8 ...">Search</button>
@@ -77,7 +47,7 @@ const Home: React.FC = () => {
       </div>
       <div className={styles.bottomDiv}>
         {recipes ? (
-          myArray.map((recipe, index) => (
+          recipes.map((recipe, index) => (
             <div
               className={`${hoveredIndex === index ? styles.hovered : styles.ingredientBox}`}
               key={recipe.name}
@@ -85,6 +55,7 @@ const Home: React.FC = () => {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               {recipe.name}
+              <Image  src={recipe.image} alt="" width={100} height={100}></Image>
             </div>
           ))
         ) : (

@@ -19,18 +19,18 @@ const AdminPage: React.FC = () => {
   };
 
   // Example of a try/catch request client side
-  const fetchAbility = async () => {
-    try {
-      const res = await axios.get("/api/ability");
-      setAbility(res.data.name);
-    } catch (error) {
-      console.error("There was a problem fetching the ability:", error);
-    }
-  };
+  // const fetchAbility = async () => {
+  //   try {
+  //     const res = await axios.get("/api/ability");
+  //     setAbility(res.data.name);
+  //   } catch (error) {
+  //     console.error("There was a problem fetching the ability:", error);
+  //   }
+  // };
 
   useEffect(() => {
     fetchPokemon();
-    fetchAbility();
+    // fetchAbility();
   }, []);
 
   return (
