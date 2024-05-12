@@ -18,52 +18,64 @@ export async function GET() {
   try {
     const myArray = [
       {
-        name: "berries",
-        image: "/images/ingredients/berries.png",
+        name: "bacon and eggs",
+        image: "/images/crockpot/baconandeggs.png",
+        ingedients: [],
       },
       {
-        name: "fish",
-        image: "/images/ingredients/freshwaterfish.png",
+        name: "fish sticks",
+        image: "/images/crockpot/fishsticks.png",
+        ingedients: [],
       },
       {
-        name: "monster meat",
-        image: "/images/ingredients/monstermeat.png",
+        name: "dragon pie",
+        image: "/images/crockpot/dragonpie.png",
+        ingedients: [],
       },
       {
-        name: "morsal",
-        image: "/images/ingredients/morsel.png",
+        name: "froggie bunwich",
+        image: "/images/crockpot/froggiebunwich.png",
+        ingedients: [],
       },
       {
-        name: "ice",
-        image: "/images/ingredients/ice.png",
+        name: "honey ham",
+        image: "/images/crockpot/honeyham.png",
+        ingedients: [],
       },
       {
-        name: "frog leg",
-        image: "/images/ingredients/froglegs.png",
+        name: "ice cream",
+        image: "/images/crockpot/icecream.png",
+        ingedients: [],
       },
       {
-        name: "0",
-        image: "/images/ingredients/berries.png",
+        name: "kabobs",
+        image: "/images/crockpot/kabobs.png",
+        ingedients: [],
       },
       {
-        name: "1",
-        image: "/images/ingredients/freshwaterfish.png",
+        name: "lobster bisque",
+        image: "/images/crockpot/lobsterbisque.png",
+        ingedients: [],
       },
       {
-        name: "2",
-        image: "/images/ingredients/monstermeat.png",
+        name: "pierogi",
+        image: "/images/crockpot/pierogi.png",
+        ingedients: [],
       },
       {
-        name: "3",
-        image: "/images/ingredients/morsel.png",
+        name: "meatballs",
+        image: "/images/crockpot/meatballs.png",
+        ingedients: [],
       },
       {
-        name: "4",
-        image: "/images/ingredients/ice.png",
+        name: "meaty stew",
+        image: "/images/crockpot/meatystew.png",
+        ingedients: [],
       },
       {
-        name: "5",
-        image: "/images/ingredients/froglegs.png",
+        name: "waffles",
+        image: "/images/crockpot/waffles.png",
+        ingedients: [],
       },
     ];
 

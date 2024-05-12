@@ -8,6 +8,10 @@ import { useState, useEffect } from "react";
 interface Recipe {
   name: string;
   image: string;
+  ingredients: string[];
+  health: number;
+  hunger: number;
+  sanity: number;
 }
 
 const Home: React.FC = () => {
