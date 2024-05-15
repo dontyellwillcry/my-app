@@ -27,8 +27,19 @@ const Home: React.FC = () => {
     }
   };
 
+  const fetchDatabase = async () => {
+    try {
+      const res = await axios.get("/api/users");
+      // setRecipes(res.data);
+      console.log(res.data)
+    } catch (error) {
+      console.error("There was a problem fetching the database:", error);
+    }
+  };
+
   useEffect(() => {
     fetchAbility();
+    fetchDatabase()
   }, []);
 
   console.log(recipes)
