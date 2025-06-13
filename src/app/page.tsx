@@ -37,9 +37,29 @@ const Home: React.FC = () => {
     }
   };
 
+  async function getPokemon(name: string): Promise<any> {
+    try {
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}/`);
+      if (!response.ok) {
+        throw new Error("Network response not ok");
+      }
+      const data = await response.json();
+      console.log("Just the name", data)
+      // console.log("here is ", data);
+      
+      return data;
+    } catch (error) {
+      console.error("error: ", error);
+    }
+  }
+  
+  
+  
+
   useEffect(() => {
     fetchAbility();
     fetchDatabase()
+    getPokemon("pikachu");
   }, []);
 
   console.log(recipes)
