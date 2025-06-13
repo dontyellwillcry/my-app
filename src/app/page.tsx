@@ -14,14 +14,22 @@ interface Recipe {
   sanity: number;
 }
 
+interface Ingredient {
+  image: string;
+  name: string;
+  type: string;
+  
+}
+
 const Home: React.FC = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [ingredients, setIngredients] = useState<Ingredient[]>([]);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const fetchAbility = async () => {
     try {
       const res = await axios.get("/api/ability");
-      setRecipes(res.data);
+      // setRecipes(res.data);
     } catch (error) {
       console.error("There was a problem fetching the ability:", error);
     }
@@ -30,24 +38,19 @@ const Home: React.FC = () => {
   const fetchDatabase = async () => {
     try {
       const res = await axios.get("/api/users");
-      // setRecipes(res.data);
-      console.log(res.data)
+      console.log('here is the /users', res.data)
     } catch (error) {
       console.error("There was a problem fetching the database:", error);
     }
   };
 
-  async function getPokemon(name: string): Promise<any> {
+  async function getIngredients(): Promise<any> {
     try {
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}/`);
-      if (!response.ok) {
-        throw new Error("Network response not ok");
-      }
-      const data = await response.json();
-      console.log("Just the name", data)
-      // console.log("here is ", data);
-      
-      return data;
+      const response = await axios.get(`/api/ingredients`);
+      // setIngredients(response.data.data);
+      setIngredients(response.data);
+      console.log("Ingredients", response.data)      
+      return response.data;
     } catch (error) {
       console.error("error: ", error);
     }
@@ -59,10 +62,9 @@ const Home: React.FC = () => {
   useEffect(() => {
     fetchAbility();
     fetchDatabase()
-    getPokemon("pikachu");
+    getIngredients();
   }, []);
 
-  console.log(recipes)
 
   return (
     <div className={styles.container}>
@@ -71,7 +73,7 @@ const Home: React.FC = () => {
           <h1>Welcome User!!</h1>
         </div>
         <div className={styles.imgContainer}>
-          <Image src="/images/icons/crockpot.png" alt="" fill></Image>
+          <Image src="/images/icons/crockpot.png" alt="" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"></Image>
         </div>
         <div className={styles.formContainer}>
           <form className={styles.form}>
@@ -81,16 +83,16 @@ const Home: React.FC = () => {
         </div>
       </div>
       <div className={styles.bottomDiv}>
-        {recipes ? (
-          recipes.map((recipe, index) => (
+        {Array.isArray(ingredients) && ingredients.length > 0 ? (
+          ingredients.map((ingredient, index) => (
             <div
               className={`${hoveredIndex === index ? styles.hovered : styles.ingredientBox}`}
-              key={recipe.name}
+              key={ingredient.name}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              {recipe.name}
-              <Image  src={recipe.image} alt="" width={100} height={100}></Image>
+              {ingredient.name}
+              <Image  src={ingredient.image} alt="" width={100} height={100}></Image>
             </div>
           ))
         ) : (
