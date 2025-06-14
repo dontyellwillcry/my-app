@@ -26,10 +26,10 @@ const Home: React.FC = () => {
   const [ingredients, setIngredients] = useState<Ingredient[]>([]);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  const fetchAbility = async () => {
+  const fetchAbility = async (): Promise<any> => {
     try {
-      const res = await axios.get("/api/ability");
-      // setRecipes(res.data);
+      const res = await axios.get<Recipe[]>("/api/ability");
+      setRecipes(res.data);
     } catch (error) {
       console.error("There was a problem fetching the ability:", error);
     }
@@ -41,13 +41,13 @@ const Home: React.FC = () => {
       console.log('here is the /users', res.data)
     } catch (error) {
       console.error("There was a problem fetching the database:", error);
+      return null;
     }
   };
 
-  async function getIngredients(): Promise<any> {
+  async function getIngredients(): Promise<Ingredient[] | undefined> {
     try {
-      const response = await axios.get(`/api/ingredients`);
-      // setIngredients(response.data.data);
+      const response = await axios.get<Ingredient[]>(`/api/ingredients`);
       setIngredients(response.data);
       console.log("Ingredients", response.data)      
       return response.data;
