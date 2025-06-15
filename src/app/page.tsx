@@ -21,6 +21,17 @@ interface Ingredient {
   
 }
 
+// Assuming you have a User interface defined somewhere in your codebase
+// If not, you can define it like this:
+interface User {
+  id: number;
+  username: string;
+  password: string;
+  email: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 const Home: React.FC = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [ingredients, setIngredients] = useState<Ingredient[]>([]);
@@ -35,10 +46,11 @@ const Home: React.FC = () => {
     }
   };
 
-  const fetchDatabase = async () => {
+  const fetchDatabase = async (): Promise<User[] | null> => {
     try {
-      const res = await axios.get("/api/users");
+      const res = await axios.get<User[]>("/api/users");
       console.log('here is the /users', res.data)
+      return res.data;
     } catch (error) {
       console.error("There was a problem fetching the database:", error);
       return null;
