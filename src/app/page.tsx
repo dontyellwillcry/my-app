@@ -37,7 +37,7 @@ const Home: React.FC = () => {
   const [ingredients, setIngredients] = useState<Ingredient[]>([]);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  const fetchAbility = async (): Promise<any> => {
+  const fetchAbility = async (): Promise<Recipe[] | any> => {
     try {
       const res = await axios.get<Recipe[]>("/api/ability");
       setRecipes(res.data);
